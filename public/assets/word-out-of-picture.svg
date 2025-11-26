@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+  <rect width="600" height="360" rx="20" fill="#f7fbff" />
+  <g transform="translate(60,60)" fill="#ddefff">
+    <rect x="30" y="30" width="200" height="130" rx="12" />
+    <rect x="270" y="30" width="200" height="130" rx="12" />
+  </g>
+  <text x="40" y="220" font-family="Poppins, Arial" font-size="22" fill="#1f4f7a">Word out of Picture</text>
+  <text x="40" y="250" font-family="Poppins, Arial" font-size="14" fill="#5a6b77">Puzzle game with pictures and jumbled letters (C++)</text>
+</svg>

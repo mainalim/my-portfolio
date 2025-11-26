@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin - Inquiries</title>
+  <style>body{font-family:Arial;padding:1rem}table{width:100%;border-collapse:collapse}th,td{border:1px solid #ddd;padding:.5rem}</style>
+</head>
+<body>
+<h1>Contact Inquiries</h1>
+<table>
+<tr><th>#</th><th>Name</th><th>Email</th><th>Subject</th><th>Message</th><th>Date</th></tr>
+<% inquiries.forEach(function(i,idx){ %>
+<tr>
+<td><%= idx+1 %></td>
+<td><%= i.name %></td>
+<td><%= i.email %></td>
+<td><%= i.subject || '' %></td>
+<td><%= i.message %></td>
+<td><%= new Date(i.createdAt).toLocaleString() %></td>
+</tr>
+<% }) %>
+</table>
+</body>
+</html>

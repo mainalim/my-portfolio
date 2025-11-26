@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+  <rect width="600" height="360" rx="20" fill="#fffaf6" />
+  <g transform="translate(60,60)" fill="#ffe5d0">
+    <rect x="40" y="40" width="240" height="120" rx="12" />
+    <rect x="320" y="70" width="120" height="60" rx="8" />
+  </g>
+  <text x="40" y="220" font-family="Poppins, Arial" font-size="22" fill="#8b3b1f">Audio Amplifier</text>
+  <text x="40" y="250" font-family="Poppins, Arial" font-size="14" fill="#69504a">Analog electronics project for mobile audio (2017)</text>
+</svg>
