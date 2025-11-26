@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Projects by Madhusudan Mainali — full stack web applications, demos and source code on GitHub.">
+<title>Projects — Madhusudan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <h1 class="brand">Projects</h1>
+    <nav class="main-nav">
+      <a href="/">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/projects.html">Projects</a>
+      <a href="/blog.html">Blog</a>
+    </nav>
+    <div class="social-links">
+      <a href="https://github.com/mainalim" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M12 .297a12 12 0 00-3.797 23.412c.6.11.82-.26.82-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.757-1.333-1.757-1.09-.745.083-.73.083-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.809 1.304 3.495.997.108-.775.42-1.305.763-1.605-2.665-.304-5.467-1.333-5.467-5.93 0-1.31.468-2.382 1.235-3.222-.125-.303-.535-1.523.115-3.176 0 0 1.005-.322 3.3 1.23a11.5 11.5 0 016 0c2.29-1.553 3.295-1.23 3.295-1.23.655 1.653.245 2.873.12 3.176.77.84 1.235 1.912 1.235 3.222 0 4.61-2.807 5.625-5.48 5.922.43.372.815 1.102.815 2.222v3.293c0 .322.215.694.825.576A12 12 0 0012 .297z"/></svg>
+      </a>
+      <a href="https://www.linkedin.com/in/madhusudan-mainali63/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M4.98 3.5a2.5 2.5 0 11-.001 5.001A2.5 2.5 0 014.98 3.5zM3 9h4v12H3zM9 9h3.78v1.71h.05c.53-1 1.82-2.05 3.75-2.05 4 0 4.74 2.63 4.74 6.04V21H17v-5.25c0-1.26-.02-2.87-1.75-2.87-1.75 0-2.02 1.37-2.02 2.78V21H9V9z"/></svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <h2>My Projects</h2>
+  <div id="projectsGrid" class="grid">Loading projects...</div>
+</main>
+
+<footer class="site-footer">
+  <div class="container"><p>&copy; <span id="year"></span> Madhusudan</p></div>
+</footer>
+
+<script src="/js/site.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+fetch('/api/projects')
+  .then(res => res.json())
+  .then(projects => {
+    const grid = document.getElementById('projectsGrid');
+    if(!projects.length){ grid.innerHTML = '<p>No projects yet.</p>'; return; }
+    grid.innerHTML = projects.map(p=>`
+      <article class="card">
+        <h3>${p.title}</h3>
+        <p>${p.description || ''}</p>
+        <p><strong>Technologies:</strong> ${p.technologies || ''}</p>
+        <p>${p.repoLink?`<a href="${p.repoLink}" target="_blank">Repo</a>`:''}${p.demoLink?` | <a href="${p.demoLink}" target="_blank">Demo</a>`:''}</p>
+      </article>
+    `).join('');
+  });
+</script>
+
+</body>
+</html>

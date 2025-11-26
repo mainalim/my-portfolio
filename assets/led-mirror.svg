@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="360" viewBox="0 0 600 360">
+  <rect width="600" height="360" rx="20" fill="#fff9f7" />
+  <g transform="translate(70,50)" fill="#ffd9cc">
+    <rect x="0" y="0" width="460" height="220" rx="14" stroke="#ffb08a" stroke-width="2" />
+    <rect x="30" y="30" width="120" height="120" fill="#fff1e6" rx="8" />
+  </g>
+  <text x="40" y="290" font-family="Poppins, Arial" font-size="20" fill="#b85b2e">LED Mirror (LOCUS-2017)</text>
+  <text x="40" y="315" font-family="Poppins, Arial" font-size="12" fill="#7a6f6f">Interactive LED frame casting shadow effects</text>
+</svg>
